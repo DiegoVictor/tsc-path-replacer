@@ -1,4 +1,7 @@
 {
   "name": "tsc-path-replacer",
   "license": "MIT",
+  "devDependencies": {
+    "prettier": "^2.7.1",
+  }
 }
