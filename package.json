@@ -1,6 +1,9 @@
 {
   "name": "tsc-path-replacer",
   "license": "MIT",
+  "description": "Resolve imports/requires alias according to tsconfig paths",
+  "author": "DiegoVictor",
+  "main": "dist/index.js",
   "devDependencies": {
     "prettier": "^2.7.1",
     "typescript": "^4.8.3"
