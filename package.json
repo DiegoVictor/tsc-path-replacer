@@ -7,6 +7,30 @@
   "scripts": {
     "build": "tsc"
   },
+  "bin": {
+    "tsc-path-replacer": "dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DiegoVictor/tsc-path-replacer"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "keywords": [
+    "tsc",
+    "typescript",
+    "tsconfig",
+    "ts",
+    "path",
+    "paths",
+    "alias",
+    "aliases",
+    "replace"
+  ],
   "dependencies": {
     "globby": "^13.1.2"
   },
