@@ -7,6 +7,9 @@
   "scripts": {
     "build": "tsc"
   },
+  "dependencies": {
+    "globby": "^13.1.2"
+  },
   "devDependencies": {
     "@types/node": "^18.7.20",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
