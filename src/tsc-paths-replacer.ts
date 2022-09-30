@@ -14,3 +14,11 @@ const config: Record<string, any> = {
 function replaceSlashes(text: string) {
   return text.replaceAll(path.sep, path.posix.sep);
 }
+
+function getFilesFromPattern(patern: string) {
+  return globbySync(replaceSlashes(patern), {
+    dot: true,
+    onlyFiles: true,
+  });
+}
+
