@@ -10,3 +10,7 @@ const config: Record<string, any> = {
   rootDir: path.resolve(process.cwd()),
   prefixes: '',
 };
+
+function replaceSlashes(text: string) {
+  return text.replaceAll(path.sep, path.posix.sep);
+}
