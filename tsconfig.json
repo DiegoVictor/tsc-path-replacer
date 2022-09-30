@@ -7,7 +7,9 @@
     "strict": true,
     "skipLibCheck": true,
     "outDir": "dist",
-    "lib": ["ES2021.String"]
+    "lib": ["ES2021.String"],
+    "sourceMap": true,
+    "declaration": true
   },
   "include": ["src"],
   "exclude": ["dist"]
