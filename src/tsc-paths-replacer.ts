@@ -1,0 +1,12 @@
+import path from 'node:path';
+
+const aliasesMap = new Map();
+const sourceModuleCache = new Map();
+const moduleCache = new Map();
+
+const config: Record<string, any> = {
+  outDir: '',
+  baseUrl: '',
+  rootDir: path.resolve(process.cwd()),
+  prefixes: '',
+};
