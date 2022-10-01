@@ -13,3 +13,6 @@ Resolve imports/requires alias according to tsconfig paths. It tries use more re
 * [Usage](#usage)
 * [Inspired by](#inspired-by)
 
+
+# Inspired by
+[tsconfig-replace-paths](https://github.com/jonkwheeler/tsconfig-replace-paths)
