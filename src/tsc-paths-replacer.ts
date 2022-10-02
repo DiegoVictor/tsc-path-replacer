@@ -22,3 +22,19 @@ function getFilesFromPattern(patern: string) {
   });
 }
 
+function getModuleRelativePath(
+  moduleSourcePath: string,
+  outputFilePath: string
+) {
+  if (!sourceModuleCache.has(outputFilePath)) {
+    sourceModuleCache.set(
+      outputFilePath,
+      path.resolve(
+        config.rootDir,
+        config.baseUrl,
+        path.relative(config.outDir, outputFilePath)
+      )
+    );
+  }
+
+}
