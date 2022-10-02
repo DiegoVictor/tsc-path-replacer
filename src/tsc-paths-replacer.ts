@@ -47,3 +47,11 @@ function getModuleRelativePath(
     ? moduleRelativePath
     : `./${moduleRelativePath}`;
 }
+
+function getModulePath(moduleName: string, file: string) {
+  const result = moduleName.match(config.prefixes);
+  if (result) {
+  }
+
+  return null;
+}
