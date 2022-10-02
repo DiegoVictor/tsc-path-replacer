@@ -19,7 +19,9 @@
     "dist",
     "README.md",
     "LICENSE",
-    "package.json"
+    "package.json",
+    "package-lock.json",
+    "yarn.lock"
   ],
   "keywords": [
     "tsc",
