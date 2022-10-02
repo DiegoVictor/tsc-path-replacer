@@ -55,8 +55,15 @@ function getModulePath(moduleName: string, file: string) {
     const relativePath = moduleName.substring(alias.length);
 
     for (const aliasPath of aliasesMap.get(alias)) {
+      const moduleSourcePath = path.resolve(aliasPath, relativePath);
+      const [exists] = getFilesFromPattern(
+        `${moduleSourcePath}.{js,jsx,ts,tsx,d.ts,json}`
+      );
+
+      if (exists) {
     }
 
+    }
 
     console.log(
       `\x1b[31mSource file not found for module ${moduleName}\x1b[0m`
