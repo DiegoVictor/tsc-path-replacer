@@ -51,6 +51,16 @@ function getModuleRelativePath(
 function getModulePath(moduleName: string, file: string) {
   const result = moduleName.match(config.prefixes);
   if (result) {
+    const [alias] = result;
+    const relativePath = moduleName.substring(alias.length);
+
+    for (const aliasPath of aliasesMap.get(alias)) {
+    }
+
+
+    console.log(
+      `\x1b[31mSource file not found for module ${moduleName}\x1b[0m`
+    );
   }
 
   return null;
