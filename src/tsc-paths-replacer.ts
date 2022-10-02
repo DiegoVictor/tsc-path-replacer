@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-syntax */
+import { globbySync } from 'globby';
 import path from 'node:path';
 
 const aliasesMap = new Map();
