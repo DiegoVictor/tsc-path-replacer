@@ -61,7 +61,13 @@ function getModulePath(moduleName: string, file: string) {
       );
 
       if (exists) {
-    }
+        const fileCache = moduleCache.get(file) || {};
+
+        if (fileCache[alias]) {
+          return replaceSlashes(
+            `./${path.join(fileCache[alias], relativePath)}`
+          );
+        }
 
     }
 
