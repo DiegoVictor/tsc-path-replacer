@@ -37,4 +37,13 @@ function getModuleRelativePath(
     );
   }
 
+  const sourceFileFullPath = sourceModuleCache.get(outputFilePath);
+  const moduleRelativePath = path.relative(
+    path.dirname(sourceFileFullPath),
+    moduleSourcePath
+  );
+
+  return moduleRelativePath.startsWith('.')
+    ? moduleRelativePath
+    : `./${moduleRelativePath}`;
 }
