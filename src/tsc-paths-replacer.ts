@@ -71,6 +71,7 @@ function getModulePath(moduleName: string, file: string) {
           );
         }
 
+      }
     }
 
     console.log(
