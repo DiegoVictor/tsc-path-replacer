@@ -90,3 +90,5 @@ function getModulePath(moduleName: string, file: string) {
 
   return null;
 }
+
+const IMPORT_REGEX = /(?:require\(|import\(?|from) ?['"]([^'"]*)['"]\)?/g;
