@@ -76,6 +76,9 @@ function getModulePath(moduleName: string, file: string) {
           file
         );
 
+        fileCache[alias] = moduleRelativePath.replace(relativePath, '');
+        moduleCache.set(file, fileCache);
+
       }
     }
 
