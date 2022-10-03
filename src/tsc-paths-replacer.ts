@@ -71,6 +71,11 @@ function getModulePath(moduleName: string, file: string) {
           );
         }
 
+        const moduleRelativePath = getModuleRelativePath(
+          moduleSourcePath,
+          file
+        );
+
       }
     }
 
