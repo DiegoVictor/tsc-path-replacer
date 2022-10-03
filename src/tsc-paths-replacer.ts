@@ -79,6 +79,7 @@ function getModulePath(moduleName: string, file: string) {
         fileCache[alias] = moduleRelativePath.replace(relativePath, '');
         moduleCache.set(file, fileCache);
 
+        return replaceSlashes(moduleRelativePath);
       }
     }
 
