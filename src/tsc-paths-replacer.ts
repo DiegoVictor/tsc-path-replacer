@@ -104,3 +104,11 @@ async function replace(text: string, file: string) {
 
   return text;
 }
+
+async function handle(file: string) {
+  const content = await readFile(file, 'utf-8');
+  const code = await replace(content, file);
+  if (code !== content) {
+    await writeFile(file, code, 'utf-8');
+  }
+}
