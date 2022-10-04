@@ -1,5 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 import { globbySync } from 'globby';
+import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const aliasesMap = new Map();
