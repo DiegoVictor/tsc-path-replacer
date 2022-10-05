@@ -116,3 +116,11 @@ async function handle(file: string) {
 
 const queue: string[] = [];
 const QUEUE_SIZE = 5;
+async function enqueue(files: string[]) {
+  while (queue.length < QUEUE_SIZE && files.length > 0) {
+    const file = files.shift();
+    if (file) {
+      queue.push();
+    }
+  }
+}
