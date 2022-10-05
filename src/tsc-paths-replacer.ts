@@ -115,6 +115,18 @@ async function handle(file: string) {
 }
 
 const queue: string[] = [];
+async function processQueue(files: string[]) {
+  if (queue.length > 0) {
+    const promises = queue.map(async item =>
+      // eslint-disable-next-line no-use-before-define
+      handle(item).then(() => enqueue(files))
+    );
+
+    queue.splice(0, queue.length);
+    await Promise.all(promises);
+  }
+}
+
 const QUEUE_SIZE = 5;
 async function enqueue(files: string[]) {
   while (queue.length < QUEUE_SIZE && files.length > 0) {
