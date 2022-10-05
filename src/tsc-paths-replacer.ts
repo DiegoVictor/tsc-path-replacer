@@ -113,3 +113,5 @@ async function handle(file: string) {
     await writeFile(file, code, 'utf-8');
   }
 }
+
+const queue: string[] = [];
