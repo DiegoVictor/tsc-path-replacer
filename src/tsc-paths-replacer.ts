@@ -135,4 +135,5 @@ async function enqueue(files: string[]) {
       queue.push();
     }
   }
+  return processQueue(files);
 }
