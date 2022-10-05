@@ -115,3 +115,4 @@ async function handle(file: string) {
 }
 
 const queue: string[] = [];
+const QUEUE_SIZE = 5;
