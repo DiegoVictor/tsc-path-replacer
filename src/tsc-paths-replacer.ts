@@ -143,4 +143,10 @@ export const run = async (tsConfig: ConfigProps) => {
     map.clear();
   });
 
+  Object.keys(tsConfig).forEach(key => {
+    if (tsConfig[key]) {
+      config[key] = tsConfig[key];
+    }
+  });
+
 };
