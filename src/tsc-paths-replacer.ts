@@ -139,4 +139,8 @@ async function enqueue(files: string[]) {
 }
 
 export const run = async (tsConfig: ConfigProps) => {
+  [sourceModuleCache, moduleCache, aliasesMap].forEach(map => {
+    map.clear();
+  });
+
 };
