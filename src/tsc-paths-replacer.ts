@@ -137,3 +137,6 @@ async function enqueue(files: string[]) {
   }
   return processQueue(files);
 }
+
+export const run = async (tsConfig: ConfigProps) => {
+};
