@@ -149,4 +149,5 @@ export const run = async (tsConfig: ConfigProps) => {
     }
   });
 
+  const files = getFilesFromPattern(`${config.outDir}/**/*.{js,jsx,ts,tsx}`);
 };
