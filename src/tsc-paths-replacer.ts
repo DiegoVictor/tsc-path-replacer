@@ -164,5 +164,7 @@ export const run = async (tsConfig: ConfigProps) => {
       return prefixes;
     }, [])
     .join('|');
+
   const files = getFilesFromPattern(`${config.outDir}/**/*.{js,jsx,ts,tsx}`);
+  await enqueue(files);
 };
