@@ -3,6 +3,13 @@ import { globbySync } from 'globby';
 import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
+interface ConfigProps extends Record<string, any> {
+  outDir: string;
+  baseUrl: string;
+  rootDir: string;
+  paths: Record<string, string[]>;
+}
+
 const aliasesMap = new Map();
 const sourceModuleCache = new Map();
 const moduleCache = new Map();
