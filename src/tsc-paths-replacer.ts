@@ -149,5 +149,20 @@ export const run = async (tsConfig: ConfigProps) => {
     }
   });
 
+  config.prefixes = Object.keys(tsConfig.paths)
+    .reduce<string[]>((prefixes, alias) => {
+      const key = alias.replace(/\*$/, '');
+      prefixes.push(key);
+
+      aliasesMap.set(
+        key,
+        tsConfig.paths[alias].map(aliasPath =>
+          path.resolve(config.baseUrl, aliasPath.replace(/\*/, ''))
+        )
+      );
+
+      return prefixes;
+    }, [])
+    .join('|');
   const files = getFilesFromPattern(`${config.outDir}/**/*.{js,jsx,ts,tsx}`);
 };
