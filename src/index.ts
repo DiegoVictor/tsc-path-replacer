@@ -1,3 +1,4 @@
+import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 
 const [, , project = 'tsconfig.json'] = process.argv;
@@ -14,3 +15,7 @@ function safeParse(raw: string) {
   return null;
 }
 
+stat(tsconfigPath).then(async () => {
+  const raw = await readFile(tsconfigPath);
+
+});
