@@ -18,4 +18,11 @@ function safeParse(raw: string) {
 stat(tsconfigPath).then(async () => {
   const raw = await readFile(tsconfigPath);
 
+  const tsconfig = safeParse(raw.toString());
+  if (tsconfig) {
+    const {
+      compilerOptions: { outDir, baseUrl, paths, rootDir },
+    } = tsconfig;
+
+  }
 });
