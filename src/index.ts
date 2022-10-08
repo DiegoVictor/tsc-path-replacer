@@ -1,5 +1,6 @@
 import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
+import { run } from './tsc-paths-replacer';
 
 const [, , project = 'tsconfig.json'] = process.argv;
 
@@ -24,5 +25,11 @@ stat(tsconfigPath).then(async () => {
       compilerOptions: { outDir, baseUrl, paths, rootDir },
     } = tsconfig;
 
+    await run({
+      outDir,
+      baseUrl,
+      paths,
+      rootDir,
+    });
   }
 });
