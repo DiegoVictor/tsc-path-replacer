@@ -1,5 +1,5 @@
 {
-  "name": "tsc-path-replacer",
+  "name": "@diegovictor/tsc-path-replacer",
   "license": "MIT",
   "version": "1.0.0",
   "description": "Resolve imports/requires alias according to tsconfig paths",
