@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "target": "es2016",
-    "module": "commonjs",
+    "module": "es2015",
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -11,6 +12,6 @@
     "sourceMap": true,
     "declaration": true
   },
-  "include": ["src"],
+  "include": ["./src"],
   "exclude": ["dist"]
 }
