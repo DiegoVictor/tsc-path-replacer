@@ -5,6 +5,7 @@
   "description": "Resolve imports/requires alias according to tsconfig paths",
   "author": "DiegoVictor",
   "main": "dist/index.js",
+  "private": false,
   "scripts": {
     "build": "tsc"
   },
