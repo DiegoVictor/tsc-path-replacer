@@ -24,10 +24,10 @@ function replaceSlashes(text: string) {
   return text.replaceAll(path.sep, path.posix.sep);
 }
 
-function getFilesFromPattern(patern: string) {
+function findByPattern(patern: string, onlyFiles = true) {
   return sync(replaceSlashes(patern), {
     dot: true,
-    onlyFiles: true,
+    onlyFiles,
   });
 }
 
@@ -159,6 +159,6 @@ export const run = async (tsConfig: ConfigProps) => {
     }, [])
     .join('|');
 
-  const files = getFilesFromPattern(`${config.outDir}/**/*.{js,jsx,ts,tsx}`);
+  const files = findByPattern(`${config.outDir}/**/*.{js,jsx,ts,tsx}`);
   await enqueue(files);
 };
