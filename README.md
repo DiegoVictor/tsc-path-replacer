@@ -1,4 +1,5 @@
 # tsc-path-replacer
+[![npm](https://img.shields.io/npm/v/@diegovictor/tsc-path-replacer?style=flat-square)](https://www.npmjs.com/package/@diegovictor/tsc-path-replacer)
 [![eslint](https://img.shields.io/badge/eslint-8.24.0-4b32c3?style=flat-square&logo=eslint)](https://eslint.org/)
 [![prettier](https://img.shields.io/badge/prettier-2.7.1-F7B93E?style=flat-square&logo=prettier)](https://prettier.io/)
 [![airbnb-style](https://flat.badgen.net/badge/style-guide/airbnb/ff5a5f?icon=airbnb)](https://github.com/airbnb/javascript)
