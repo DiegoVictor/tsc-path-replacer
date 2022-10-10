@@ -13,6 +13,23 @@ Resolve imports/requires alias according to tsconfig paths. It tries use more re
 * [Usage](#usage)
 * [Inspired by](#inspired-by)
 
+# Installing
+Just run:
+```
+npm install --save-dev @diegovictor/tsc-path-replacer
+```
+Or simply:
+```
+yarn add -D @diegovictor/tsc-path-replacer
+```
+
+# Usage
+Register on your build script:
+```json
+"scripts": {
+  "build": "tsc --project tsconfig.json && tsc-path-replacer tsconfig.json",
+}
+```
 
 # Inspired by
 [tsconfig-replace-paths](https://github.com/jonkwheeler/tsconfig-replace-paths)
