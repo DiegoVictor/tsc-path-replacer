@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { run } from './tsc-paths-replacer';
