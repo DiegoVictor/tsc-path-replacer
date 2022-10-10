@@ -11,7 +11,6 @@ interface ConfigProps extends Record<string, any> {
 }
 
 const aliasesMap = new Map();
-const sourceModuleCache = new Map();
 const moduleCache = new Map();
 
 const config: Record<string, any> = {
@@ -33,24 +32,12 @@ function getFilesFromPattern(patern: string) {
 }
 
 function getModuleRelativePath(
-  moduleSourcePath: string,
-  outputFilePath: string
+  outputFilePath: string,
+  requiredModulePath: string
 ) {
-  if (!sourceModuleCache.has(outputFilePath)) {
-    sourceModuleCache.set(
-      outputFilePath,
-      path.resolve(
-        config.rootDir,
-        config.baseUrl,
-        path.relative(config.outDir, outputFilePath)
-      )
-    );
-  }
-
-  const sourceFileFullPath = sourceModuleCache.get(outputFilePath);
   const moduleRelativePath = path.relative(
-    path.dirname(sourceFileFullPath),
-    moduleSourcePath
+    path.dirname(outputFilePath),
+    requiredModulePath
   );
 
   return moduleRelativePath.startsWith('.')
