@@ -36,7 +36,7 @@
     "replace"
   ],
   "dependencies": {
-    "globby": "^13.1.2"
+    "globby": "^11.1.0"
   },
   "devDependencies": {
     "@types/node": "^18.7.20",
