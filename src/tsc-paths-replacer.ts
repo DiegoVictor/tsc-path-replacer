@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-syntax */
-import { globbySync } from 'globby';
+import { sync } from 'globby';
 import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
@@ -26,7 +26,7 @@ function replaceSlashes(text: string) {
 }
 
 function getFilesFromPattern(patern: string) {
-  return globbySync(replaceSlashes(patern), {
+  return sync(replaceSlashes(patern), {
     dot: true,
     onlyFiles: true,
   });
