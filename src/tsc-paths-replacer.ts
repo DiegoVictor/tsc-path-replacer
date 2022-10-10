@@ -143,6 +143,10 @@ export const run = async (tsConfig: ConfigProps) => {
     }
   });
 
+  ['rootDir', 'outDir'].forEach(key => {
+    config[key] = path.resolve(config[key]);
+  });
+
   config.prefixes = Object.keys(tsConfig.paths)
     .reduce<string[]>((prefixes, alias) => {
       const key = alias.replace(/\*$/, '');
