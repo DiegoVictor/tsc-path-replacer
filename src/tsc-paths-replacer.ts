@@ -155,7 +155,11 @@ export const run = async (tsConfig: ConfigProps): Promise<void> => {
       aliasesMap.set(
         key,
         tsConfig.paths[alias].map(aliasPath =>
-          path.resolve(config.baseUrl, aliasPath.replace(/\*/, ''))
+          path.resolve(
+            config.outDir,
+            config.baseUrl,
+            aliasPath.replace(/\*/, '')
+          )
         )
       );
 
