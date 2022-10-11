@@ -87,7 +87,7 @@ function getModulePath(moduleName: string, file: string) {
 }
 
 const IMPORT_REGEX = /(?:require\(|import\(?|from) ?['"]([^'"]*)['"]\)?/g;
-async function replace(text: string, file: string) {
+function replace(text: string, file: string): string {
   const imports = Array.from(text.matchAll(IMPORT_REGEX));
 
   for (const [raw, match] of imports) {
@@ -100,7 +100,7 @@ async function replace(text: string, file: string) {
   return text;
 }
 
-async function handle(file: string) {
+async function handle(file: string): Promise<void> {
   const content = await readFile(file, 'utf-8');
   const code = await replace(content, file);
   if (code !== content) {
@@ -109,7 +109,7 @@ async function handle(file: string) {
 }
 
 const queue: string[] = [];
-async function processQueue(files: string[]) {
+async function processQueue(files: string[]): Promise<void> {
   if (queue.length > 0) {
     const promises = queue.map(async item =>
       // eslint-disable-next-line no-use-before-define
@@ -122,7 +122,7 @@ async function processQueue(files: string[]) {
 }
 
 const QUEUE_SIZE = 5;
-async function enqueue(files: string[]) {
+async function enqueue(files: string[]): Promise<void> {
   while (queue.length < QUEUE_SIZE && files.length > 0) {
     const file = files.shift();
     if (file) {
@@ -132,7 +132,7 @@ async function enqueue(files: string[]) {
   return processQueue(files);
 }
 
-export const run = async (tsConfig: ConfigProps) => {
+export const run = async (tsConfig: ConfigProps): Promise<void> => {
   [sourceModuleCache, moduleCache, aliasesMap].forEach(map => {
     map.clear();
   });
