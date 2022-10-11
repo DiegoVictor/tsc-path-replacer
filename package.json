@@ -33,7 +33,10 @@
     "paths",
     "alias",
     "aliases",
-    "replace"
+    "replace",
+    "import",
+    "imports",
+    "require"
   ],
   "dependencies": {
     "globby": "^11.1.0"
