@@ -102,7 +102,7 @@ function replace(text: string, file: string): string {
 
 async function handle(file: string): Promise<void> {
   const content = await readFile(file, 'utf-8');
-  const code = await replace(content, file);
+  const code = replace(content, file);
   if (code !== content) {
     await writeFile(file, code, 'utf-8');
   }
