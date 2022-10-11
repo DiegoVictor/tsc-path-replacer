@@ -126,7 +126,7 @@ async function enqueue(files: string[]): Promise<void> {
   while (queue.length < QUEUE_SIZE && files.length > 0) {
     const file = files.shift();
     if (file) {
-      queue.push();
+      queue.push(file);
     }
   }
   return processQueue(files);
