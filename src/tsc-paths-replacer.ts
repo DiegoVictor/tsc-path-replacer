@@ -88,9 +88,9 @@ function getModulePath(moduleName: string, file: string) {
 
 const IMPORT_REGEX = /(?:require\(|import\(?|from) ?['"]([^'"]*)['"]\)?/g;
 async function replace(text: string, file: string) {
-  const matches = Array.from(text.matchAll(IMPORT_REGEX));
+  const imports = Array.from(text.matchAll(IMPORT_REGEX));
 
-  for (const [raw, match] of matches) {
+  for (const [raw, match] of imports) {
     const modulePath = getModulePath(match, file);
     if (modulePath) {
       text = text.replace(raw, raw.replace(match, modulePath));
