@@ -57,25 +57,15 @@ function getModulePath(moduleName: string, file: string): string | null {
     return null;
   }
 
-    for (const aliasPath of aliasesMap.get(alias)) {
-      const moduleSourcePath = path.resolve(aliasPath, relativePath);
-      const [exists] = getFilesFromPattern(
-        `${moduleSourcePath}.{js,jsx,ts,tsx,d.ts,json}`
-      );
+  const relativePath = moduleName.substring(alias.length);
+  for (const aliasPath of aliasPaths) {
+    const requiredModuleFullPath = path.resolve(aliasPath, relativePath);
 
-      if (exists) {
-        const fileCache = moduleCache.get(file) || {};
-
-        if (fileCache[alias]) {
-          return replaceSlashes(
-            `./${path.join(fileCache[alias], relativePath)}`
-          );
-        }
-
-        const moduleRelativePath = getModuleRelativePath(
-          moduleSourcePath,
-          file
-        );
+    const existsRequiredModule = !!findByPattern(
+      replaceSlashes(requiredModuleFullPath),
+      false
+    );
+    if (existsRequiredModule) {
 
         fileCache[alias] = moduleRelativePath.replace(relativePath, '');
         moduleCache.set(file, fileCache);
