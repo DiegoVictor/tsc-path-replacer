@@ -45,7 +45,7 @@ function getModuleRelativePath(
     : `./${moduleRelativePath}`;
 }
 
-function getModulePath(moduleName: string, file: string) {
+function getModulePath(moduleName: string, file: string): string | null {
   const result = moduleName.match(config.prefixes);
   if (result) {
     const [alias] = result;
