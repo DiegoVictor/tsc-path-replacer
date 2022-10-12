@@ -51,6 +51,11 @@ function getModulePath(moduleName: string, file: string): string | null {
     return null;
   }
 
+  const [alias] = result;
+  const aliasPaths = aliasesMap.get(alias);
+  if (!Array.isArray(aliasPaths) || aliasPaths.length === 0) {
+    return null;
+  }
 
     for (const aliasPath of aliasesMap.get(alias)) {
       const moduleSourcePath = path.resolve(aliasPath, relativePath);
