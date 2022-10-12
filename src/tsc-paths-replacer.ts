@@ -66,17 +66,13 @@ function getModulePath(moduleName: string, file: string): string | null {
       false
     );
     if (existsRequiredModule) {
+      const requiredModuleRelativePath = getModuleRelativePath(
+        file,
+        path.relative(config.rootDir, requiredModuleFullPath)
+      );
 
-        fileCache[alias] = moduleRelativePath.replace(relativePath, '');
-        moduleCache.set(file, fileCache);
-
-        return replaceSlashes(moduleRelativePath);
-      }
+      return replaceSlashes(requiredModuleRelativePath);
     }
-
-    console.log(
-      `\x1b[31mSource file not found for module ${moduleName}\x1b[0m`
-    );
   }
 
   return null;
