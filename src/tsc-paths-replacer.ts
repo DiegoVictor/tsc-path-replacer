@@ -47,9 +47,10 @@ function getModuleRelativePath(
 
 function getModulePath(moduleName: string, file: string): string | null {
   const result = moduleName.match(config.prefixes);
-  if (result) {
-    const [alias] = result;
-    const relativePath = moduleName.substring(alias.length);
+  if (!result) {
+    return null;
+  }
+
 
     for (const aliasPath of aliasesMap.get(alias)) {
       const moduleSourcePath = path.resolve(aliasPath, relativePath);
