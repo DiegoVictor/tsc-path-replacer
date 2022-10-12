@@ -27,7 +27,7 @@ const userService = require('@services/user/getUsers');
 const userService = require('../../services/user/getUsers');
 ```
 
-The biggest difference from this package to another similar ones is the huge usage of the Node.js asynchronous APIs.
+The biggest difference from this package to another similar ones is the huge usage of the Node.js asynchronous APIs and paralelism (up to 5 files are processed at the same time).
 
 ## Table of Contents
 * [Installing](#installing)
