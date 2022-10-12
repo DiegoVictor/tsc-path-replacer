@@ -9,6 +9,24 @@
 
 Resolve imports/requires alias according to tsconfig paths. It tries use more resources provided by Node.js, like, asynchronous methods, paralelism and a simple memory cache.
 
+### Examples
+```js
+// ./src/controllers/user/index.js
+
+// this import:
+import userService from '@services/user/getUsers';
+// will be replaced by:
+import userService from '../../services/user/getUsers';
+```
+
+Using `require`:
+```js
+// ./src/controllers/user/index.js
+
+const userService = require('@services/user/getUsers');
+const userService = require('../../services/user/getUsers');
+```
+
 ## Table of Contents
 * [Installing](#installing)
 * [Usage](#usage)
