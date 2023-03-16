@@ -7,7 +7,7 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://raw.githubusercontent.com/DiegoVictor/tsc-path-replacer/main/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-Resolve imports/requires alias according to tsconfig paths. It tries use more resources provided by Node.js, like, asynchronous methods, paralelism and a simple memory cache.
+Resolve imports/requires alias according to tsconfig paths. It tries use more resources provided by Node.js, like, asynchronous methods, paralelism and a simple memory cache. (Also, it works on windows!)
 
 ### Examples
 ```js
